@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ApiV1Service } from '../business/data-access/api-v1.service';
+import { ApiV1Service } from './business/data-access/api-v1.service';
 
 @Component({
     selector: 'app-root',
