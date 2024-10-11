@@ -1,20 +1,28 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ApiV1Service } from './business/data-access/api-v1.service';
+import { LayoutComponent } from './shared/ui/layout/layout.component';
+import { HeaderComponent } from './shared/ui/header/header.component';
+import { PageContentComponent } from './shared/ui/page-content/page-content.component';
+import { NavigationComponent } from './shared/ui/navigation/navigation.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet],
+    imports: [
+        RouterOutlet,
+        HeaderComponent,
+        LayoutComponent,
+        NavigationComponent,
+        PageContentComponent,
+    ],
     template: `
-        <router-outlet />
-        <button (click)="ping()">TEST</button>
+        <app-layout>
+            <app-header [title]="'Game of Cards'" />
+            <app-navigation />
+            <app-page-content>
+                <router-outlet />
+            </app-page-content>
+        </app-layout>
     `,
 })
-export class AppComponent {
-    private readonly api = inject(ApiV1Service);
-
-    public ping(): void {
-        this.api.players.getAll$().subscribe((players) => console.log(players));
-    }
-}
+export class AppComponent {}
