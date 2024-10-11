@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { ElementDirective } from '../element/element.directive';
 
 @Component({
     selector: 'app-header',
@@ -18,17 +19,10 @@ import { Component, input } from '@angular/core';
             text-4xl
             font-semibold
             tracking-wide
-            drop-shadow
-            text-dark-2
-            bg-light-2
-            shadow-light-3
-            dark:text-light-3
-            dark:bg-dark-2
-            dark:shadow-light-2
-
         `,
     },
+    hostDirectives: [ElementDirective],
 })
 export class HeaderComponent {
-    public title = input.required<string>();
+    public readonly title = input.required<string>();
 }
