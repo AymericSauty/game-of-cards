@@ -1,12 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClient } from '@angular/common/http';
 import { CacheEndPoint } from './cache-end-point';
-import {
-    inject,
-    Injectable,
-    Injector,
-    runInInjectionContext,
-} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 class MockApiService extends CacheEndPoint {
@@ -15,15 +10,15 @@ class MockApiService extends CacheEndPoint {
 
 class MockEndPoint {
     constructor(
-        public url: string,
-        public http: HttpClient,
+        public readonly url: string,
+        public readonly http: HttpClient,
     ) {}
 }
 
 class MockAnotherEndPoint {
     constructor(
-        public url: string,
-        public http: HttpClient,
+        public readonly url: string,
+        public readonly http: HttpClient,
     ) {}
 }
 
