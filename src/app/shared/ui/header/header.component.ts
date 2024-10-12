@@ -12,13 +12,13 @@ import { ElementDirective } from '../element/element.directive';
             text-center
             content-center
             h-20
-            mobile:mx-2
-            tablet:mx-5
-            desktop:mx-10
-            rounded-b-3xl
+            mobile:mx-4
+            tablet:mx-8
+            desktop:mx-16
+            rounded-b-xl
             text-4xl
             font-semibold
-            tracking-wide
+            tracking-wider
         `,
     },
     hostDirectives: [ElementDirective],
