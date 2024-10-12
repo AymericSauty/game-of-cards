@@ -1,21 +1,20 @@
 import { Component, inject, Signal } from '@angular/core';
 import { ApiV1Service } from '../../data-access/api-v1.service';
 import { DataQuery } from '../../../shared/data-access/data-query/data-query';
-import { GameComponent } from '../../ui/game/game.component';
+import { ScoreComponent } from '../../ui/score/score.component';
 import { SpinnerComponent } from '../../../shared/ui/spinner/spinner.component';
 import { forkJoin, map } from 'rxjs';
-import { JsonPipe } from '@angular/common';
 import { LoadingState } from '../../../shared/data-access/data-query/loading-state';
-import { Score } from '../../ui/game/score';
+import { Score } from '../../ui/score/score';
 
 @Component({
-    selector: 'app-score',
+    selector: 'app-score-page',
     standalone: true,
-    imports: [GameComponent, SpinnerComponent, JsonPipe],
-    templateUrl: './score.component.html',
+    imports: [ScoreComponent, SpinnerComponent],
+    templateUrl: './score-page.component.html',
     host: { class: `block` },
 })
-export class ScoreComponent {
+export class ScorePageComponent {
     private readonly api = inject(ApiV1Service);
 
     public readonly data: Signal<LoadingState<Score[]>> = new DataQuery(
@@ -26,23 +25,23 @@ export class ScoreComponent {
             map(({ games, players }) =>
                 games.map((game): Score[] =>
                     game.scores
-                        .map((score) => {
+                        .map(({ playerId, score }) => {
                             const player = players.find(
-                                (p) => p.id === score.playerId,
+                                (p) => p.id === playerId,
                             )?.name;
-
-                            const isWinner =
-                                score.score ===
-                                Math.max(...game.scores.map((s) => s.score));
 
                             if (player == null) {
                                 return null;
                             }
 
+                            const isWinner =
+                                score ===
+                                Math.max(...game.scores.map((s) => s.score));
+
                             return {
-                                score: score.score,
-                                player,
                                 isWinner,
+                                player,
+                                score,
                             };
                         })
                         .filter((score) => score != null),
