@@ -5,16 +5,16 @@ export const gameCardRoutes: Routes = [
         title: 'Score',
         path: 'score',
         loadComponent: () =>
-            import('./business/feature/score/score.component').then(
-                (c) => c.ScoreComponent,
+            import('./business/feature/score-page/score-page.component').then(
+                (c) => c.ScorePageComponent,
             ),
     },
     {
         title: 'Play',
         path: 'play',
         loadComponent: () =>
-            import('./business/feature/play/play.component').then(
-                (c) => c.PlayComponent,
+            import('./business/feature/game-page/game-page.component').then(
+                (c) => c.GamePageComponent,
             ),
     },
 ];

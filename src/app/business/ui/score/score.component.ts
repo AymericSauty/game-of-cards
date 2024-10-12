@@ -5,10 +5,10 @@ import { IconComponent } from '../../../shared/ui/icon/icon.component';
 import { UpperCasePipe } from '@angular/common';
 
 @Component({
-    selector: 'app-game',
+    selector: 'app-score',
     standalone: true,
     imports: [IconComponent, UpperCasePipe],
-    templateUrl: './game.component.html',
+    templateUrl: './score.component.html',
     hostDirectives: [ElementDirective],
     host: {
         class: `
@@ -19,6 +19,6 @@ import { UpperCasePipe } from '@angular/common';
         `,
     },
 })
-export class GameComponent {
+export class ScoreComponent {
     public readonly data = input.required<Score[]>();
 }
