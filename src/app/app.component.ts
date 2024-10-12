@@ -19,8 +19,8 @@ import { APP_TITLE } from './app.config';
     ],
     template: `
         <app-layout>
-            <app-header [title]="title" class="mb-2" />
-            <app-navigation [routes]="routes" />
+            <app-header [title]="title" class="mb-4" />
+            <app-navigation [routes]="routes" class="mb-10" />
             <app-page-content>
                 <router-outlet />
             </app-page-content>

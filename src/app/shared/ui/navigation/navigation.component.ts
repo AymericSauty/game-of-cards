@@ -10,9 +10,9 @@ import { ElementLinkDirective } from '../element/element-link.directive';
     host: {
         class: `
             block
-            mobile:mx-2
-            tablet:mx-5
-            desktop:mx-10
+            mobile:mx-4
+            tablet:mx-8
+            desktop:mx-16
         `,
     },
 })

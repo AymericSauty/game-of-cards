@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
     host: {
         class: `
             block
-            mobile:p-2
-            tablet:p-5
-            desktop:p-10
+            mobile:px-4
+            tablet:px-8
+            desktop:px-16
         `,
     },
 })
