@@ -3,7 +3,7 @@ import { ApiV1Service } from '../../data-access/api-v1.service';
 import { DataQuery } from '../../../shared/data-access/data-query/data-query';
 import { ScoreComponent } from '../../ui/score/score.component';
 import { SpinnerComponent } from '../../../shared/ui/spinner/spinner.component';
-import { forkJoin, map } from 'rxjs';
+import { forkJoin, map, tap } from 'rxjs';
 import { LoadingState } from '../../../shared/data-access/data-query/loading-state';
 import { Score } from '../../ui/score/score';
 
