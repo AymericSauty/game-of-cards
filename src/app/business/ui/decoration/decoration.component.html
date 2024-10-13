@@ -1,0 +1,10 @@
+@for (icon of icons(); track $index) {
+    <app-icon
+        [name]="icon.name"
+        class="absolute text-surface-dark-2 dark:text-surface-light-2 text-base"
+        [style.top.px]="icon.position.top"
+        [style.left.px]="icon.position.left"
+        [style.right.px]="icon.position.right"
+        [style.bottom.px]="icon.position.bottom"
+    />
+}

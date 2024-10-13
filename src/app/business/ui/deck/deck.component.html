@@ -1,0 +1,17 @@
+@for (card of cards(); track $index) {
+    @if ($first) {
+        <app-card></app-card>
+    } @else {
+        @if ($index < 5) {
+            <app-card
+                class="!absolute transition inset-0"
+                [style.z-index]="-$index - 1"
+                [style.--offset]="$index + 'px'"
+                [style.--multiplier]="offsetMultiplier()"
+                [style.transform]="
+                    'translate(calc(var(--offset) * var(--multiplier)), calc(var(--offset) * var(--multiplier)))'
+                "
+            />
+        }
+    }
+}

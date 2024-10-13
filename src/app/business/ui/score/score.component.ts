@@ -3,11 +3,12 @@ import { ElementDirective } from '../../../shared/ui/element/element.directive';
 import { Score } from './score';
 import { IconComponent } from '../../../shared/ui/icon/icon.component';
 import { UpperCasePipe } from '@angular/common';
+import { DecorationComponent } from '../decoration/decoration.component';
 
 @Component({
     selector: 'app-score',
     standalone: true,
-    imports: [IconComponent, UpperCasePipe],
+    imports: [DecorationComponent, IconComponent, UpperCasePipe],
     templateUrl: './score.component.html',
     hostDirectives: [ElementDirective],
     host: {
