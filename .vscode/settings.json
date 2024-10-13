@@ -4,12 +4,6 @@
   "typescript.preferences.quoteStyle": "single",
   "prettier.resolveGlobalModules": true,
   "angular.enable-strict-mode-prompt": false,
-  "eslint.rules.customizations": [
-    {
-      "rule": "padding-line-between-statements",
-      "severity": "warn"
-    }
-  ],
   "jestrunner.runOptions": [
     "--coverage=true --coverageReporters=lcovonly --no-cache"
   ],

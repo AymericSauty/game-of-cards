@@ -1,25 +1,14 @@
-<app-icon
-    name="heart"
-    class="absolute text-surface-dark-2 dark:text-surface-light-2 text-base left-2 top-2"
-/>
-<app-icon
-    name="spade"
-    class="absolute text-surface-dark-2 dark:text-surface-light-2 text-base right-2 top-2"
-/>
-<app-icon
-    name="diamond"
-    class="absolute text-surface-dark-2 dark:text-surface-light-2 text-base left-2 bottom-2"
-/>
-<app-icon
-    name="clover"
-    class="absolute text-surface-dark-2 dark:text-surface-light-2 text-base right-2 bottom-2"
-/>
+<app-decoration />
 
 @let scores = data();
 
 <div class="space-y-2">
     @for (score of scores; track $index) {
-        <div class="text-center" [class.font-semibold]="score.isWinner">
+        <div
+            class="text-center"
+            [class.font-semibold]="score.isWinner"
+            [class.underline]="score.isWinner"
+        >
             {{ score.player | uppercase }} : {{ score.score }}
         </div>
     }

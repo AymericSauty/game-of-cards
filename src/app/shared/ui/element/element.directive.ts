@@ -6,13 +6,11 @@ import { Directive } from '@angular/core';
     standalone: true,
     host: {
         class: `
-            drop-shadow
-            text-dark-2
+            shadow-sm
             bg-light-2
-            shadow-light-3
-            dark:text-light-3
+            shadow-dark-3/15
             dark:bg-dark-2
-            dark:shadow-light-2
+            dark:shadow-light-2/5
         `,
     },
 })

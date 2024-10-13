@@ -1,0 +1,24 @@
+@for (card of cards(); track $index) {
+    @if ($first) {
+        <app-card [isDisabled]="isDisabled()" />
+    } @else {
+        @if ($index < 5) {
+            <app-card
+                class="!absolute transition inset-0"
+                [isDisabled]="true"
+                [style.z-index]="-$index - 1"
+                [style.--deck-offset]="$index + 'px'"
+                [style.--deck-offset-multiplier]="offsetMultiplier()"
+                [style.--deck-orientation-offset-multiplier]="
+                    offsetOrientationMultiplier()
+                "
+                [style.transform]="
+                    'translate(calc(var(--deck-offset) * var(--deck-orientation-offset-multiplier)), calc(var(--deck-offset) * var(--deck-offset-multiplier)))'
+                "
+            />
+        }
+    }
+} @empty {
+    <app-card [isDisabled]="true" [isEmpty]="true"></app-card>
+}
+<div class="text-center mt-4 text-xs">({{ nbCard() }})</div>

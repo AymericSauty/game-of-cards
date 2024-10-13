@@ -9,11 +9,12 @@ module.exports = {
             mobile: { max: '767px' },
         },
         fontFamily: {
-            sans: ['Roboto', 'sans-serif'],
+            sans: ['cursive', 'sans-serif'],
         },
         colors: {
             transparent: 'transparent',
-            'dark-1': '#141314',
+            'red': '#af2e2e',
+            'dark-1': '#090909',
             'dark-2': '#1c1b1d',
             'dark-3': '#2a282b',
             'light-1': '#fefbff',

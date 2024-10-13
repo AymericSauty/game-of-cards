@@ -23,7 +23,7 @@ export class ScorePageComponent {
             players: this.api.players.getAll$(),
         }).pipe(
             map(({ games, players }) =>
-                games.map((game): Score[] =>
+                games.reverse().map((game): Score[] =>
                     game.scores
                         .map(({ playerId, score }) => {
                             const player = players.find(

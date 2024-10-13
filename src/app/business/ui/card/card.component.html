@@ -1,0 +1,6 @@
+@let card = data();
+
+@if (!isEmpty()) {
+    <app-decoration [type]="card?.type" [offset]="8" />
+    {{ card?.value }}
+}
