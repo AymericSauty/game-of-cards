@@ -9,7 +9,7 @@ module.exports = {
             mobile: { max: '767px' },
         },
         fontFamily: {
-            sans: ['Roboto', 'sans-serif'],
+            sans: ['cursive', 'sans-serif'],
         },
         colors: {
             transparent: 'transparent',
