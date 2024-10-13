@@ -1,12 +1,3 @@
-export type DecorationType = 'clover' | 'diamond' | 'heart' | 'spade';
-
-export const decorationType: DecorationType[] = [
-    'clover',
-    'diamond',
-    'heart',
-    'spade',
-];
-
 export type DecorationPosition =
     | 'topLeft'
     | 'topRight'

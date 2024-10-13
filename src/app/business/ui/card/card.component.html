@@ -1,5 +1,6 @@
 @let card = data();
 
-<app-decoration [type]="card?.type"/>
-
-{{ card?.value ?? '?' }}
+@if (!isEmpty()) {
+    <app-decoration [type]="card?.type" [offset]="8" />
+    {{ card?.value }}
+}

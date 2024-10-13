@@ -1,11 +1,10 @@
 import { Component, computed, input } from '@angular/core';
 import {
     decorationPosition,
-    decorationType,
-    DecorationType,
     getDecorationPosition,
 } from './decoration-position';
 import { IconComponent } from '../../../shared/ui/icon/icon.component';
+import { cardType, CardType } from '../card/card';
 
 @Component({
     selector: 'app-decoration',
@@ -15,13 +14,13 @@ import { IconComponent } from '../../../shared/ui/icon/icon.component';
     host: { class: `block` },
 })
 export class DecorationComponent {
-    public readonly type = input<DecorationType>();
+    public readonly type = input<CardType>();
 
     public readonly offset = input(16);
 
     public readonly icons = computed(() =>
         decorationPosition.map((position, index) => ({
-            name: this.type() ?? decorationType[index],
+            name: this.type() ?? cardType[index],
             position: getDecorationPosition(position, this.offset()),
         })),
     );

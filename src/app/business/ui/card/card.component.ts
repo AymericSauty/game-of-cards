@@ -35,4 +35,6 @@ import { DecorationComponent } from '../decoration/decoration.component';
 })
 export class CardComponent {
     public readonly data = input<Card>();
+
+    public readonly isEmpty = input(false);
 }
