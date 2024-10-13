@@ -21,7 +21,14 @@ import { ElementDirective } from '../../../shared/ui/element/element.directive';
 export class DeckComponent {
     public readonly nbCard = input.required<number>();
 
-    public readonly offsetMultiplier = signal<number>(3);
+    public readonly orientation = input<'left' | 'right'>('left');
+
+    public readonly offsetMultiplier = signal<number>(2);
+
+    public readonly offsetOrientationMultiplier = computed(
+        () =>
+            this.offsetMultiplier() * (this.orientation() === 'left' ? 1 : -1),
+    );
 
     public readonly cards = computed(() =>
         Array.from({ length: this.nbCard() }),

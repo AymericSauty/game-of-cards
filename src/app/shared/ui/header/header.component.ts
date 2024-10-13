@@ -11,12 +11,15 @@ import { ElementDirective } from '../element/element.directive';
             block
             text-center
             content-center
-            h-20
+            px-4
+            py-2
             mobile:mx-4
             tablet:mx-8
             desktop:mx-16
             rounded-b-xl
-            text-4xl
+            mobile:text-3xl
+            tablet:text-4xl
+            desktop:text-6xl
             font-semibold
             tracking-wider
         `,

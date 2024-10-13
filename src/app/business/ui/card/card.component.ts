@@ -16,14 +16,20 @@ import { DecorationComponent } from '../decoration/decoration.component';
         class: `
             block
             relative
-            w-48
+            mobile:w-20
+            mobile:h-32
+            tablet:w-32
+            tablet:h-48
+            desktop:w-48
+            desktop:h-72
             max-w-dvh
-            h-72
             max-h-dvh
             rounded-xl
             text-center
             content-center
-            text-6xl
+            mobile:text-3xl
+            tablet:text-5xl
+            desktop:text-6xl
         `,
     },
 })

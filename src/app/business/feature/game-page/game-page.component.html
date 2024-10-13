@@ -1,0 +1,17 @@
+@let progress = store.progress();
+
+@switch (progress) {
+    @case ('unstarted') {
+        <div class="text-center text-3xl">
+            <button app-button (click)="store.startGame()">Start a game</button>
+        </div>
+    }
+
+    @case ('started') {
+        <app-board />
+    }
+
+
+    @case ('finished') {}
+}
+

@@ -12,6 +12,7 @@ import { IconComponent } from '../../../shared/ui/icon/icon.component';
     standalone: true,
     imports: [IconComponent],
     templateUrl: './decoration.component.html',
+    host: { class: `block` },
 })
 export class DecorationComponent {
     public readonly type = input<DecorationType>();

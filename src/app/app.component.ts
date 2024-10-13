@@ -20,12 +20,13 @@ import { APP_TITLE } from './app.config';
     template: `
         <app-layout>
             <app-header [title]="title" class="mb-4" />
-            <app-navigation [routes]="routes" class="mb-10" />
+            <app-navigation [routes]="routes" class="mb-4" />
             <app-page-content>
                 <router-outlet />
             </app-page-content>
         </app-layout>
     `,
+    host: { class: `block` },
 })
 export class AppComponent {
     public readonly title = APP_TITLE;
