@@ -1,0 +1,11 @@
+@let scores = data();
+
+@if (scores.loading) {
+    <app-spinner [size]="48" />
+}
+
+<div class="space-y-5">
+    @for (score of scores.data; track $index) {
+        <app-score [data]="score" />
+    }
+</div>

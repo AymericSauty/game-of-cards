@@ -1,0 +1,12 @@
+<ng-container [formGroup]="form">
+    <div class="flex flex-col gap-4 max-w-2xl m-auto items-center">
+        Register player name
+        @for (control of form.controls.players.controls; track $index) {
+            <input appInput [formControl]="control" />
+        }
+
+        <button (click)="submit()" app-button type="button" class="mt-6">
+            Start a game
+        </button>
+    </div>
+</ng-container>

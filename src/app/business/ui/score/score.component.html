@@ -1,0 +1,15 @@
+<app-decoration />
+
+@let scores = data();
+
+<div class="space-y-2">
+    @for (score of scores; track $index) {
+        <div
+            class="text-center"
+            [class.font-semibold]="score.isWinner"
+            [class.underline]="score.isWinner"
+        >
+            {{ score.player | uppercase }} : {{ score.score }}
+        </div>
+    }
+</div>
