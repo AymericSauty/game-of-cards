@@ -3,7 +3,7 @@ import { Card, cardType } from '../../ui/card/card';
 import { GamePlayer } from './game-page.state';
 
 export const gameDeck: Card[] = cardType.flatMap((type) =>
-    Array.from({ length: 2 }, (_, i) => i + 1).map((value) => ({
+    Array.from({ length: 13 }, (_, i) => i + 1).map((value) => ({
         value,
         type,
     })),
