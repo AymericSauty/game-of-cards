@@ -1,0 +1,10 @@
+<ng-container [formGroup]="form">
+    <div class="flex flex-col gap-4 max-w-2xl m-auto items-center">
+        Insert token
+        <input appInput formControlName="token" />
+
+        <button (click)="submit()" app-button type="button" class="mt-6">
+            Login
+        </button>
+    </div>
+</ng-container>

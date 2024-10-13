@@ -10,12 +10,10 @@ export function formRegistryFactory(): FormGroup<FormRegistry> {
             new FormControl<string>('Player 1', {
                 validators: [Validators.required],
                 nonNullable: true,
-                updateOn: 'blur',
             }),
             new FormControl<string>('Player 2', {
                 validators: [Validators.required],
                 nonNullable: true,
-                updateOn: 'blur',
             }),
         ]),
     });
