@@ -1,17 +1,24 @@
 @let progress = store.progress();
 
 @switch (progress) {
-    @case ('unstarted') {
-        <div class="text-center text-3xl">
-            <button app-button (click)="store.startGame()">Start a game</button>
-        </div>
+    @case ('registry') {
+        <app-registry />
+    }
+
+    @case ('loading') {
+        <app-spinner [size]="48" />
     }
 
     @case ('started') {
         <app-board />
     }
 
-
-    @case ('finished') {}
+    @case ('finished') {
+        <app-score [data]="store.score()" class="mb-6" />
+        <div class="text-center text-3xl">
+            <button app-button (click)="store.renewGame()" type="button">
+                Start a new game
+            </button>
+        </div>
+    }
 }
-

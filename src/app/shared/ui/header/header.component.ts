@@ -17,9 +17,9 @@ import { ElementDirective } from '../element/element.directive';
             tablet:mx-8
             desktop:mx-16
             rounded-b-xl
-            mobile:text-3xl
-            tablet:text-4xl
-            desktop:text-6xl
+            mobile:text-2xl
+            tablet:text-3xl
+            desktop:text-5xl
             font-semibold
             tracking-wider
         `,

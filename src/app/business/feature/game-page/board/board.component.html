@@ -1,9 +1,16 @@
-<div class="space-y-2 mobile:flex mobile:items-center mobile:flex-col">
-    <div class="text-center tablet:text-start desktop:text-start">Player 1</div>
-    <app-deck [nbCard]="2" orientation="right" />
+@let players = store.players();
+
+<app-player [data]="players[0]" deckOrientation="left" />
+
+<div class="min-h-32 grid grid-cols-2 grid-rows-1">
+    @for (item of store.boardItems(); track $index) {
+        <div
+            class="flex justify-center items-center [grid-area:1/var(--board-item-col)]"
+            [style.--board-item-col]="item.playerIndex"
+        >
+            <app-card [data]="item.card" [isDisabled]="true" />
+        </div>
+    }
 </div>
-<div class="min-h-32"></div>
-<div class="space-y-2 mobile:flex mobile:items-center mobile:flex-col">
-    <div class="text-center tablet:text-end desktop:text-end">Player 2</div>
-    <app-deck [nbCard]="26" />
-</div>
+
+<app-player [data]="players[1]" deckOrientation="right" />

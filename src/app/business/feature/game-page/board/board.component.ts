@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { GamePageStore } from '../game-page.store';
-import { DeckComponent } from '../../../ui/deck/deck.component';
+import { PlayerComponent } from '../player/player.component';
+import { CardComponent } from "../../../ui/card/card.component";
 
 @Component({
     selector: 'app-board',
     standalone: true,
-    imports: [DeckComponent],
+    imports: [PlayerComponent, CardComponent],
     templateUrl: './board.component.html',
     host: {
         class: `
@@ -14,8 +15,6 @@ import { DeckComponent } from '../../../ui/deck/deck.component';
             mobile:grid-rows-[auto_1fr_auto]
             tablet:grid-cols-[auto_1fr_auto]
             desktop:grid-cols-[auto_1fr_auto]
-            h-full
-            content-center
         `,
     },
 })

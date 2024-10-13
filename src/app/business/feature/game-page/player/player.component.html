@@ -1,0 +1,14 @@
+@let player = data();
+
+<div class="space-y-2 flex items-center flex-col">
+    <div class="text-center tablet:text-start desktop:text-start">
+        {{ player.name | uppercase }} -
+        <span class="font-semibold">Score : {{ player.score }}</span>
+    </div>
+    <app-deck
+        [nbCard]="player.deck.length"
+        [isDisabled]="player.isWaiting"
+        [orientation]="deckOrientation()"
+        (click)="store.playCard(player)"
+    />
+</div>
